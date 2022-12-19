@@ -2,4 +2,6 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-echo "Olá Mundo!";
+use App\Controller\Pages\Home;
+
+echo Home::getHome();
