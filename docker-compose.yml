@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: mvcphp
+    build:
+      context: .
+      args:
+        USER: wenderson
+      dockerfile: Dockerfile
+    image: wwanzeller/php
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - mvcphp
+    depends_on:
+      - nginx
+      - mysql
+ 
+  nginx:
+    container_name: mvcphp-nginx
+    image: nginx:alpine
+    restart: unless-stopped
+    expose: 
+      - 80
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/:/etc/nginx/conf.d/
+    networks:
+      - mvcphp
+ 
+  mysql:
+    container_name: mvcphp-mysql
+    image: mysql:latest
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    volumes:
+      - ./.docker/mysql/dbdata:/var/lib/mysql
+    expose: 
+      - 3388
+    ports:
+      - 3388:3306
+    networks:
+      - mvcphp
+  
+  phpmyadmin:
+    container_name: mvcphp-phpmyadmin
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    expose:
+      - 8080
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - mvcphp
+
+networks:
+  mvcphp:
+    driver: bridge
