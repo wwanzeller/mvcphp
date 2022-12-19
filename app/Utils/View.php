@@ -34,9 +34,6 @@ class View
             return "{{{$item}}}";
         }, $keys);
 
-        // echo '<pre>';
-        // var_dump($keys);
-        // exit;
         return str_replace($keys, array_values($vars), $contentView);
     }
 }
