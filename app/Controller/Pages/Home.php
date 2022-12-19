@@ -2,15 +2,21 @@
 
 namespace App\Controller\Pages;
 
+//DEPENDÊNCIAS DO PROJETO
+use App\Utils\View;
+
 class Home
 {
     /**
-     * Método responsa´vel por retornar o conteúdo (view) da home.
+     * Método responsável por retornar o conteúdo (view) da home.
      *
      * @return String
      */
     public static function getHome() : String
     {
-        return 'Olá mundo!';
+        return View::render('pages/home', [
+            'name' => 'Wenderson Wanzeller',
+            'description' => 'Endereço Linkedin: https://www.linkedin.com/in/wenderson-wanzeller'
+        ]);
     }
 }
