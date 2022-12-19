@@ -30,6 +30,6 @@ class Organization
      *
      * @var string
      */
-    public $description = 'Empresa de tecnologia localizada em Viana do Catela, Portugal.';
+    public $description = 'Empresa de tecnologia localizada em Viana do Catelo, Portugal.';
 }
 
