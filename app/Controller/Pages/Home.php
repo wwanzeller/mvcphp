@@ -4,6 +4,7 @@ namespace App\Controller\Pages;
 
 //DEPENDÊNCIAS DO PROJETO
 use App\Utils\View;
+use App\Model\Entity\Organization;
 
 class Home extends Page
 {
@@ -14,10 +15,14 @@ class Home extends Page
      */
     public static function getHome() : String
     {
+        //ORGANIZAÇÃO
+        $obOrganization = new Organization;
+        
         //VIEW DA HOME
         $content =  View::render('pages/home', [
-            'name' => 'Wenderson Wanzeller',
-            'description' => 'Endereço Linkedin: https://www.linkedin.com/in/wenderson-wanzeller'
+            'name'        => $obOrganization->name,
+            'description' => $obOrganization->description,
+            'site'        => $obOrganization->site
         ]);
 
         //VIEW DA PÁGINA
