@@ -7,29 +7,29 @@ class Organization
     /**
      * Id da organização.
      *
-     * @var integer
+     * @var Integer
      */
-    public $id = 1;
+    public Int $id = 1;
 
     /**
      * Nome da organização.
      *
-     * @var string
+     * @var String
      */
-    public $name = 'Personaltech PT';
+    public String $name = 'Personaltech PT';
 
     /**
      * Site da organização.
      *
-     * @var string
+     * @var String
      */
-    public $site = 'https://personaltech.pt';
+    public String $site = 'https://personaltech.pt';
 
     /**
      * Descrição da emprsa.
      *
-     * @var string
+     * @var String
      */
-    public $description = 'Empresa de tecnologia localizada em Viana do Catelo, Portugal.';
+    public String $description = 'Empresa de tecnologia localizada em Viana do Catelo, Portugal.';
 }
 
