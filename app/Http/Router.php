@@ -25,7 +25,7 @@ class Router
     /**
      * Indice de rotas.
      *
-     * @var array
+     * @var Array
      */
     private Array $routes = [];
 
@@ -44,7 +44,7 @@ class Router
     public function __construct(String $url)
     {
         $this->request = new Request();
-        $this->url = $url;
+        $this->url     = $url;
         $this->setPrefix();
     }
 
@@ -195,7 +195,6 @@ class Router
                     //RETORNO DOS PARÂMETROS DA ROTA                    
                     return $methods[$httpMethod];
                 }
-
                 throw new Exception('Método não permitido', 405);
             }
         }

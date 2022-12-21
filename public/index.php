@@ -2,8 +2,7 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use App\Http\{Router};
-use App\Controller\Pages\Home;
+use App\Http\Router;
 use App\Utils\View;
 
 define('URL', 'http://localhost');

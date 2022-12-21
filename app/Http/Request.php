@@ -5,18 +5,13 @@ namespace App\Http;
 /**
  * Class Request
  * @package App\Http
- * @property-read string $httpMethod
- * @property-read string $uri
- * @property-read array $queryParams
- * @property-read array $postVars
- * @property-read array $headers
  */
 class Request 
 {
     /**
      * Método HTTP da requisição.
      *
-     * @var [type]
+     * @var String
      */
     private String $httpMethod;
 
@@ -48,6 +43,9 @@ class Request
      */
     private Array $headers = [];
 
+    /**
+     * Método responsável pela iniciação da classe Request.
+     */
     public function __construct()
     {
         $this->httpMethod  = $_SERVER['REQUEST_METHOD'] ?? '';
@@ -97,7 +95,7 @@ class Request
         return $this->queryParams;
     }
 
-      /**
+    /**
      * Método responsável por retornar as variáveis do POST.
      *
      * @return Array
@@ -106,6 +104,4 @@ class Request
     {
         return $this->postVars;
     }
-
-
 }
