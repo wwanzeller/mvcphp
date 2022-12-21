@@ -24,6 +24,6 @@ class Home extends Page
         ]);
 
         //VIEW DA PÁGINA
-        return parent::getPage('HOME > MVC', $content);
+        return parent::getPage('HOME', $content);
     }
 }

@@ -26,6 +26,6 @@ class About extends Page
         ]);
 
         //VIEW DA PÁGINA
-        return parent::getPage('SOBRE > MVC', $content);
+        return parent::getPage('SOBRE', $content);
     }
 }
