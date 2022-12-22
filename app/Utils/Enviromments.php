@@ -5,7 +5,8 @@ namespace App\Utils;
 class Enviromments{
 
    /**
-    * Método responsável por carregar as variáveis de ambiente do projeto
+    * Método responsável por carregar as variáveis de ambiente do projeto.
+    * Para leitura utilizar getenv(variavel).
     * @param String $dir
     */
    public static function load(String $dir)
