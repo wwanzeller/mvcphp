@@ -3,9 +3,16 @@
 require __DIR__.'/../vendor/autoload.php';
 
 use App\Http\Router;
-use App\Utils\View;
+use App\Utils\{
+                View, 
+                Enviromments
+            };
 
-define('URL', 'http://localhost');
+//CARREGA VARIÁVEIS DE AMBIENTE
+Enviromments::load(__DIR__.'/../');
+
+//DEFINE A CONSTANTE DA URL DO PROJETO
+define('URL', getenv('URL'));
 
 //DEFINE O VALOR PDADRÃO DAS VARIÁVEIS
 View::init([
