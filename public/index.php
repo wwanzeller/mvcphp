@@ -1,7 +1,9 @@
 <?php
 
+//CARREGA AUTOLOAD DO COMPOSER
 require __DIR__.'/../vendor/autoload.php';
 
+//CARREGA AS DEPENDÊNCIAS
 use App\Http\Router;
 use App\Utils\{
                 View, 
@@ -24,7 +26,6 @@ $obRouter = new Router(URL);
 
 //INCLUI AS ROTAS DE PÁGINAS
 include __DIR__.'/../routes/pages.php';
-
 
 //IMPRIME O RESPONSE DA ROTA
 $obRouter->run()->sendResponse();
