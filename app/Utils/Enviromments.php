@@ -19,10 +19,8 @@ class Enviromments{
 
         //DEFINE AS VARIÁVEIS DE AMBIENTE
         $lines = file($dir.'/.env');
-        foreach($lines as $line)
-        {
-            putenv($line);
+        foreach($lines as $line){
+            putenv(trim($line));
         }
     }
-
 }
