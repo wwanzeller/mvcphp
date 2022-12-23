@@ -5,13 +5,13 @@ require __DIR__.'/../vendor/autoload.php';
 
 //CARREGA AS DEPENDÊNCIAS
 use App\Utils\{View,Enviromments};
-use App\DataBaseManager\Database;
+use App\DataBase\Db;
 
 //CARREGA VARIÁVEIS DE AMBIENTE
 Enviromments::load(__DIR__.'/../');
 
 //CONFIG DATABASE CLASS
-Database::config(
+Db::config(
     getenv('DB_HOST'),
     getenv('DB_DATABASE'),
     getenv('DB_USERNAME'),

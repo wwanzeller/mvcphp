@@ -1,12 +1,12 @@
 <?php
 
-namespace App\DataBaseManager;
+namespace App\DataBase;
 //DEPENDENCIAS DO PROJETO
 use PDO;
 use PDOException;
 use Throwable;
 
-class Database {
+class Db {
 
     /**
      * Host de conexão com banco de dados.
