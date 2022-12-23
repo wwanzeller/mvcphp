@@ -22,7 +22,7 @@ Database::config(
 //DEFINE A CONSTANTE DA URL DO PROJETO
 define('URL', getenv('URL'));
 
-//DEFINE O VALOR PDADRÃO DAS VARIÁVEIS
+//DEFINE VALOR PARA UTILIZAÇÃO GLOBAL DE VARIÁVEIS
 View::init([
     'URL' => URL
 ]);
