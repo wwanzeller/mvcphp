@@ -4,11 +4,8 @@ require __DIR__.'/../vendor/autoload.php';
 
 
 //CARREGA AS DEPENDÊNCIAS
+use App\Utils\{View,Enviromments};
 use App\DataBaseManager\Database;
-use App\Utils\{
-                View, 
-                Enviromments
-            };
 
 //CARREGA VARIÁVEIS DE AMBIENTE
 Enviromments::load(__DIR__.'/../');
